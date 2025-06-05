@@ -1,0 +1,49 @@
+        {% extends 'base.html' %}
+
+        {% block title %}Maeningful{% endblock %}
+
+        {% block content %}
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <section class="bg-white p-8 rounded-xl shadow-lg max-w-md w-full mx-auto mt-10">
+            <h4 class="fw-bold text-center mb-4">Maeningful Objektif</h4>
+            <form>
+                <div class="mb-1">
+                    <label for="objectives" class="block mb-2 text-sm font-medium text-gray-900">Organizational Objectives</label>
+                    <input type="text" id="objectives" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required />
+                </div>
+                <div class="mb-1">
+                    <label for="Outcomes" class="block mb-2 text-sm font-medium text-gray-900">User Outcomes</label>
+                    <input type="text" id="Outcomes" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required />
+                </div>
+                <div class="mb-1">
+                    <label for="Indicator" class="block mb-2 text-sm font-medium text-gray-900">Leading Indicator</label>
+                    <input type="text" id="Indicator" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required />
+                </div>
+                <div class="mb-1">
+                    <label for="Properties" class="block mb-2 text-sm font-medium text-gray-900">Model Properties</label>
+                    <input type="text" id="Properties" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required />
+                </div>
+                
+                <!-- Tanggal Mulai dan Akhir -->
+                <div class="flex gap-4 mb-5">
+                    <div class="w-1/2">
+                        <label for="awal" class="block mb-2 text-sm font-medium text-gray-900">Tanggal Mulai</label>
+                        <input type="date" id="awal" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2" required />
+                    </div>
+                    <div class="w-1/2">
+                        <label for="akhir" class="block mb-2 text-sm font-medium text-gray-900">Tanggal Akhir</label>
+                        <input type="date" id="akhir" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2" required />
+                    </div>
+                </div>
+        
+                <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5">Submit</button>
+            </form>
+        </section>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        
+        
+        {% endblock %}

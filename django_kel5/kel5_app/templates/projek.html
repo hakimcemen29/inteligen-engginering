@@ -1,0 +1,41 @@
+    {% extends 'base.html' %}
+
+    {% block title %}projek{% endblock %}
+
+    {% block content %}
+    <p class="fw-bold fs-4">Input Projek</p>
+    <form method="POST" action="#">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="nama_projek">Nama Projek:</label>
+            <input type="text" class="form-control" id="nama_projek" name="nama_projek" required>
+        </div>
+        <button type="submit" class="btn btn-primary mt-4">Simpan</button>
+    </form>
+
+    <table class="table mt-5 table-borderless"">
+        <thead>
+        <tr class="text-center">
+            <th scope="col">Nama Projek</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="text-center">
+            <td>Facesanse</td>
+            <td>
+                <div class="d-flex justify-content-center">
+                <div class="btn-group" role="group">
+                    <a href="#" class="btn btn-outline-primary btn-sm me-2">Lihat</a>
+                    <a href="#" class="btn btn-outline-warning btn-sm me-2 text-dark">Input</a>
+                    <a href="#" class="btn btn-outline-danger btn-sm">Cetak</a>
+                </div>
+            </div>
+            </td>
+            
+        </tr>
+        </tbody>
+    </table>
+    
+
+    {% endblock %}
