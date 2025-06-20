@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from .models import Projek, Meaningful, Experience, Implementasi, Batasan, Relasi,Perencanaan
 
 class RegisterForm(UserCreationForm):
     email = forms.EmailField(
@@ -17,6 +18,7 @@ class RegisterForm(UserCreationForm):
             'password2': forms.PasswordInput(attrs={'class': 'form-control'}),
         }
 
+
 class LoginForm(AuthenticationForm):
     username = forms.CharField(
         label="Username",
@@ -26,3 +28,64 @@ class LoginForm(AuthenticationForm):
         label="Password",
         widget=forms.PasswordInput(attrs={'class': 'form-control'})
     )
+
+
+class ProjekForm(forms.ModelForm):
+    class Meta:
+        model = Projek
+        fields = ['nama']
+
+
+
+class MeaningfulForm(forms.ModelForm):
+    class Meta:
+        model = Meaningful
+        fields = ['projek', 'objectives', 'outcomes', 'indicator', 'properties', 'tanggal_mulai', 'tanggal_akhir']
+        widgets = {
+            'projek': forms.HiddenInput()
+        }
+
+
+
+class ExperienceForm(forms.ModelForm):
+    class Meta:
+        model = Experience
+        fields = ['projek', 'automate', 'prompt', 'annotate', 'organization']
+        widgets = {
+            'projek': forms.HiddenInput()
+        }
+
+
+class ImplementasiForm(forms.ModelForm):
+    class Meta:
+        model = Implementasi
+        fields = ['projek', 'proses', 'teknologi', 'bangun']
+        widgets = {
+            'projek': forms.HiddenInput()
+        }
+
+
+class BatasanForm(forms.ModelForm):
+    class Meta:
+        model = Batasan
+        fields = ['projek', 'batasan']
+        widgets = {
+            'projek': forms.HiddenInput()
+        }
+
+
+class RelasiForm(forms.ModelForm):
+    class Meta:
+        model = Relasi
+        fields = ['projek', 'relasi']
+        widgets = {
+            'projek': forms.HiddenInput()
+        }
+class PerencanaanForm(forms.ModelForm):
+    class Meta:
+        model = Perencanaan
+        fields = ['projek','deployment','pemeliharaan','operasi']
+        widgets = {
+            'projek': forms.HiddenInput()
+        }
+    

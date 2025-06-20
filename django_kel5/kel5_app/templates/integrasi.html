@@ -1,0 +1,50 @@
+{% extends "tess.html" %}
+{% block title %}Integrasi{% endblock  %}
+
+{% block content %}
+  <script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+    @media print {
+      .no-print { display: none !important; }
+      body { background-color: white; color: black; }
+      table { page-break-inside: avoid; border-collapse: collapse; width: 100%; }
+      table, th, td { border: 1px solid black; }
+      th, td { padding: 8px; }
+      thead { background-color: #eee !important; color: black !important; }
+      tr:hover { background-color: transparent !important; }
+    }
+  </style>
+
+<section class="bg-white rounded-xl shadow p-6 mb-8">
+    <h2 class="text-xl font-semibold mb-4">Meaningful Objectives</h2>
+    <div class="overflow-x-auto">
+      <table class="min-w-full text-sm divide-y divide-gray-200">
+        <thead class="bg-[#00AAFF] text-white">
+          <tr>
+            <th class="px-4 py-2 text-left">Organizational Objectives</th>
+            <th class="px-4 py-2 text-left">User Outcomes</th>
+            <th class="px-4 py-2 text-left">Leading Indicator</th>
+            <th class="px-4 py-2 text-left">Model Properties</th>
+            <th class="px-4 py-2 text-left">Tanggal Mulai</th>
+            <th class="px-4 py-2 text-left">Tanggal Akhir</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+          {% for item in data %}
+          <tr>
+            <td class="px-4 py-2">{{ item.objectives }}</td>
+            <td class="px-4 py-2">{{ item.outcomes }}</td>
+            <td class="px-4 py-2">{{ item.indicator }}</td>
+            <td class="px-4 py-2">{{ item.properties }}</td>
+            <td class="px-4 py-2">{{ item.tanggal_mulai }}</td>
+            <td class="px-4 py-2">{{ item.tanggal_akhir }}</td>
+          </tr>
+          {% empty %}
+          <tr><td colspan="6" class="text-center py-4">Belum ada data</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+{% endblock content %}
